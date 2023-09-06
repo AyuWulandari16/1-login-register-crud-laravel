@@ -55,7 +55,7 @@ class AuthController extends Controller
 
         // menggunakan Auth::attempt() untuk mencoba masuk (login) pengguna dengan alamat email
         // dan kata sandi yang diberikan dalam $request
-        // jika berhasil, akan maka akan melakukan proses berikutnya
+        // jika berhasil, maka akan melakukan proses berikutnya
         // jika salah, akan ada ValidationException dengan pesan kesalahan yang sesuai
         if (!Auth::attempt($request->only('email', 'password'), $request->boolean('remember'))) {
             throw ValidationException::withMessages([

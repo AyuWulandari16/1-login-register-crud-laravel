@@ -9,7 +9,11 @@ Route::get('/', function () {
 });
 
 // Route grup untuk proses login, register, dan logout
+// pernyataan untuk menghubungkan dengan kontroler AuthController
 Route::controller(AuthController::class)->group(function () {
+    // Ketika user mengakses rute 'register',
+    // kontroler akan memanggil metode 'register' dalam kontroler AuthController.
+    // Nama rute 'register' ditetapkan agar dapat dengan mudah mengacu ke rute ini dalam kode aplikasi
     Route::get('register', 'register')->name('register');
     Route::post('register', 'registerSave')->name('register.save');
   

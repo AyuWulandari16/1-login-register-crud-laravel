@@ -20,7 +20,7 @@ class ProductController extends Controller
   
         // mengirimkan data tersebut ke tampilan dengan nama 'products.index' 
         // fungsi compact() untuk membuat variabel dengan nama 'product' yang akan digunakan
-        // dalam tampilan. Ini memungkinkan Anda untuk menampilkan daftar produk dalam tampilan indeks
+        // dalam tampilan. Ini memungkinkan untuk menampilkan daftar produk dalam tampilan indeks
         return view('products.index', compact('product'));
     }
   
