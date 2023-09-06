@@ -13,8 +13,14 @@ class ProductController extends Controller
     // Untuk detail barang
     public function index()
     {
+        // menggunakan model Laravel Product untuk mengambil data produk dari database
+        // mengurutkan data produk berdasarkan kolom 'created_at' secara descending (dari yang terbaru ke yang terlama) menggunakan orderBy('created_at', 'DESC')
+        // kemudian menggunakan get() untuk mengambil seluruh data produk dari tabel produk
         $product = Product::orderBy('created_at', 'DESC')->get();
   
+        // mengirimkan data tersebut ke tampilan dengan nama 'products.index' 
+        // fungsi compact() untuk membuat variabel dengan nama 'product' yang akan digunakan
+        // dalam tampilan. Ini memungkinkan Anda untuk menampilkan daftar produk dalam tampilan indeks
         return view('products.index', compact('product'));
     }
   
